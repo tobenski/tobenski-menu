@@ -1,0 +1,87 @@
+#navigation-menu {
+    @apply block w-full mx-auto my-4;
+}
+
+#navigation-menu a {
+    @apply text-center md:text-left;
+}
+
+#navigation-menu .current-menu-item a,
+#navigation-menu .current-menu-parent a {
+    @apply underline;
+}
+
+#navigation-menu .current-menu-item .sub-menu li a{
+    @apply no-underline;
+}
+
+#navigation-menu .menu-item {
+    @apply flex flex-col w-full px-5 py-3;
+}
+
+#navigation-menu .menu-item:hover {
+    @apply shadow;
+}
+
+#navigation-menu .menu-item a {
+    @apply w-full h-full font-semibold;
+}
+
+#navigation-menu .menu-item a:hover {
+    @apply font-semibold;
+}
+
+#navigation-menu .sub-menu {
+    @apply hidden;
+}
+
+#navigation-menu .current-menu-item .sub-menu,
+#navigation-menu .current-menu-parent .sub-menu {
+    @apply block;
+}
+
+#menukort-menu {
+    @apply justify-end hidden w-full;
+}
+
+#menukort-menu .menu-item {
+    @apply px-4 py-2 bg-white border-b-4 border-black border-opacity-25 bg-opacity-40;
+}
+
+#menukort-menu .current-menu-item,
+#menukort-menu .current-menu-parent {
+    @apply border-opacity-100 bg-opacity-70;
+}
+
+#menukort-menu .menu-item:hover {
+    @apply border-opacity-100 bg-opacity-70;
+}
+
+#menukort-menu .menu-item a {
+    @apply font-normal;
+}
+#footer-menu a {
+    @apply font-roboto text-xs lg:text-base font-semibold;
+}
+
+#footer-menu a:hover {
+    @apply text-gray-700;
+}
+
+
+/* SM */
+@media (min-width: 640px) {
+
+}
+/* MD */
+@media (min-width: 768px) {
+    #menukort-menu {
+        @apply flex;
+    }
+}
+/* LG */
+@media (min-width: 1024px) {}
+/* XL */
+@media (min-width: 1280px) {}
+/* 2xl */
+@media (min-width: 1536px) {}

@@ -61,43 +61,41 @@ class Tobenski_Menu_Public {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Tobenski_Menu_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Tobenski_Menu_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/tobenski-menu-public.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
-	 * Register the JavaScript for the public-facing side of the site.
+	 * Add a page-template to use with the menu slug.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param string $template [Template location]
+	 * @return string [Template location]
 	 */
-	public function enqueue_scripts() {
+	public function page_templates( $template ) {
+		if (is_page('menukort')) :
+			// has slug menukort
+			return plugin_dir_path( __FILE__ ) . 'partials/page-menukort.php';
+		elseif (is_singular( 'menu' )) :
+			// is singular view of type menu
+			return plugin_dir_path( __FILE__ ) . 'partials/single-menu.php';
+		elseif (is_tax('menu_type', 'frokost')) : 
+			// is taxonomy menu_type value frokost
+			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-frokost.php';
+		elseif (is_tax('menu_type', 'aften')) : 
+			// is taxonomy menu_type value frokost
+			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-aften.php';
+		elseif (is_tax('menu_type', 'born')) : 
+			// is taxonomy menu_type value frokost
+			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-born.php';
+		elseif (is_tax('menu_type')) : 
+			// is taxonomy menu_type value frokost
+			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type.php';
+		else :
+			// is not menu
+			return $template;
+		endif;
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Tobenski_Menu_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Tobenski_Menu_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/tobenski-menu-public.js', array( 'jquery' ), $this->version, false );
-
-	}
+	} 
 
 }

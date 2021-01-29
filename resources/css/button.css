@@ -1,0 +1,42 @@
+@layer components {
+    .btn {
+        @apply font-bold py-3 px-5 rounded-lg;
+    }
+    .btn-blue {
+        @apply bg-blue-500 text-white;
+    }
+    .btn-blue:hover {
+        @apply bg-blue-700;
+    }
+    .btn-black {
+        @apply bg-gray-700 text-gray-100;
+    }
+    .btn-black:hover {
+        @apply bg-black;
+    }
+    .btn-red {
+        @apply bg-red-500 text-white;
+    }
+    .btn-red:hover {
+        @apply bg-red-700;
+    }
+    .btn-primary {
+        @apply bg-primary  text-white;
+    }
+    .btn-primary:hover {
+        @apply bg-primary-hover;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-white;
+    }
+    .btn-secondary:hover {
+        @apply bg-secondary-hover;
+    }
+    
+    .btn-book {
+        @apply font-bold py-2 px-4 rounded-t bg-blue-500 absolute z-40;
+    }
+    .btn-book:hover {
+        @apply bg-blue-700;
+    }
+}
