@@ -73,27 +73,19 @@ class Tobenski_Menu_Public {
 	 * @return string [Template location]
 	 */
 	public function page_templates( $template ) {
+		// If not menukort or menu bail early.
+		if (!is_page('menukort') && !is_singular( 'menu' )) : return $template;	endif;
+
+		// load stylesheet
+		$this->enqueue_styles();
+		
+
 		if (is_page('menukort')) :
 			// has slug menukort
 			return plugin_dir_path( __FILE__ ) . 'partials/page-menukort.php';
 		elseif (is_singular( 'menu' )) :
 			// is singular view of type menu
 			return plugin_dir_path( __FILE__ ) . 'partials/single-menu.php';
-		elseif (is_tax('menu_type', 'frokost')) : 
-			// is taxonomy menu_type value frokost
-			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-frokost.php';
-		elseif (is_tax('menu_type', 'aften')) : 
-			// is taxonomy menu_type value frokost
-			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-aften.php';
-		elseif (is_tax('menu_type', 'born')) : 
-			// is taxonomy menu_type value frokost
-			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type-born.php';
-		elseif (is_tax('menu_type')) : 
-			// is taxonomy menu_type value frokost
-			return plugin_dir_path( __FILE__ ) . 'partials/taxonomy-menu_type.php';
-		else :
-			// is not menu
-			return $template;
 		endif;
 
 	} 
