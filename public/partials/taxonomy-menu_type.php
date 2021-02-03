@@ -10,9 +10,8 @@ $query = new WP_Query(array(
           get_header();
     } 
     wp_reset_postdata();
-    get_template_part( '/partials/menukort/navigation' ); 
 ?>
-    <section class="flex flex-wrap w-full max-w-full pt-12 pb-16 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
+    <section class="flex flex-wrap w-full max-w-full pb-12 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <?php
         $args = array(
             'post_type' => 'menu',
