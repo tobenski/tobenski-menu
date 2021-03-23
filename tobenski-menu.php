@@ -16,7 +16,7 @@
  * Plugin Name:       Det Gamle Posthus - Menuer
  * Plugin URI:        https://github.com/tobenski/tobenski-menu
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            Knud Rishøj
  * Author URI:        https://github.com/tobenski/
  * License:           GPL-2.0+

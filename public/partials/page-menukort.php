@@ -25,9 +25,7 @@
               $query->the_post();
               get_template_part( '/partials/menukort/menucard');
             }
-          } else {
-            echo "No $tax menues";
-          } 
+          }
           wp_reset_postdata(  );
         }
       ?>
